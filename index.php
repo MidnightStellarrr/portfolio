@@ -90,16 +90,20 @@
     }
 
     /* ── HERO SECTION (unchanged but polished) ── */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      padding: 0 48px 80px;
-      overflow: hidden;
-    }
+    /* ── HERO SECTION (unchanged but polished) ── */
+/* ── HERO SECTION ── */
+/* ── HERO SECTION ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px;
+  overflow: hidden;
+}
 
     .hero-bg {
       position: absolute;
@@ -112,24 +116,24 @@
     }
 
     .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        105deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.35) 50%,
-        rgba(0, 0, 0, 0.1) 100%
-      );
-      pointer-events: none;
-    }
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+}
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
     @keyframes fadeUp {
       from {
@@ -162,21 +166,22 @@
     }
 
     .hero-sub {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(0.9rem, 1.3vw, 1rem);
-      font-weight: 350;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 420px;
-      margin-bottom: 36px;
-      backdrop-filter: blur(2px);
-    }
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-weight: 350;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto 36px auto;
+  backdrop-filter: blur(2px);
+}
 
     .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
     .btn {
       display: inline-flex;
