@@ -319,10 +319,134 @@
     /* divider */
     .section-divider {
       height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(245,215,66,0.3), transparent);
       width: 80%;
       margin: 0 auto;
     }
+
+    /* ── PROJECTS SECTION ── */
+.projects-section {
+  padding: 90px 48px;
+  background: #000;
+}
+
+.projects-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.cards-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* For all project images */
+.card-screenshot {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .card-screenshot {
+  filter: grayscale(0%);
+}
+
+/* Bookly specific - stays blurred */
+/* Bookly specific - stays blurred on hover, but shows color */
+.project-card.bookly-card .card-screenshot {
+  filter: grayscale(100%) blur(4px);
+}
+
+.project-card.bookly-card:hover .card-screenshot {
+  filter: grayscale(0%) blur(4px);
+}
+
+.card-body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
+
+.card-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+}
+
+.card-subtitle {
+  font-size: 0.78rem;
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.card-dev-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #444;
+  margin-top: 8px;
+  flex: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 22px;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, opacity 0.15s;
+  border: 1.5px solid #0a0a0a;
+}
+
+.btn-card:hover { transform: translateY(-1px); opacity: 0.85; }
+.btn-card-ghost { background: transparent; color: #0a0a0a; }
+.btn-card-filled { background: #0a0a0a; color: #fff; }
+
+@media (max-width: 820px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .projects-section { padding: 70px 28px; }
+}
   </style>
 </head>
 <body>
@@ -405,6 +529,55 @@
 
   <!-- optional thin divider (design touch) -->
   <div class="section-divider"></div>
+
+  <section class="projects-section" id="projects">
+  <h2 class="projects-title">MY PROJECTS</h2>
+  <div class="cards-grid">
+
+    <!-- Pharmacare -->
+    <div class="project-card">
+      <img src="img/pharmacare_ss.jpg" alt="Pharmacare screenshot" class="card-screenshot">
+      <div class="card-body">
+        <div class="card-title">Pharmacare</div>
+        <div class="card-subtitle">E-commerce Website</div>
+        <p class="card-desc">Pharmacare Hub is a healthcare platform that connects patients, caregivers, and pharmacies in real-time. It helps users search for medicine availability, set medication reminders, subscribe to stock alerts, and manage prescriptions — all in one place. For pharmacy staff, it provides inventory management tools, expiry tracking, and sales analytics.</p>
+        <div class="card-actions">
+          <a href="#" class="btn-card btn-card-ghost">Github</a>
+          <a href="#" class="btn-card btn-card-filled">Live link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arc -->
+    <div class="project-card">
+      <img src="img/arc_ss.jpg" alt="Arc screenshot" class="card-screenshot">
+      <div class="card-body">
+        <div class="card-title">Arc.</div>
+        <div class="card-subtitle">Event Scheduler</div>
+        <p class="card-desc">ARC Event Scheduler is a desktop-based calendar and event management application that uses an AVL Tree data structure to organize and manage user schedules efficiently. The system solves disorganized event tracking, double-booking, and difficulty viewing upcoming commitments.</p>
+        <div class="card-actions">
+          <a href="#" class="btn-card btn-card-ghost">Github</a>
+          <a href="#" class="btn-card btn-card-filled">Visit GUI</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookly -->
+    <div class="project-card bookly-card">
+      <img src="img/bookly_ss.jpg" alt="Bookly screenshot" class="card-screenshot">
+      <div class="card-body">
+        <div class="card-title">Bookly</div>
+        <div class="card-subtitle">Personal Library Management</div>
+        <div class="card-dev-badge">Under Development</div>
+        <p class="card-desc">Bookly helps you organize, track, and rediscover the books you love. Whether you own 10 books or 1,000, Bookly keeps everything in one place — from what you've read, what you're currently reading, to what you want to read next. No more forgetting borrowed books or buying duplicates. Just pure book joy.</p>
+        <div class="card-actions">
+          <a href="#" class="btn-card btn-card-ghost">Github</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Simple script for smooth interaction and consistent nav link behaviour -->
   <script>
