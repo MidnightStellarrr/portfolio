@@ -447,6 +447,266 @@
   .cards-grid { grid-template-columns: 1fr; }
   .projects-section { padding: 70px 28px; }
 }
+/* ── CONTACT SECTION ── */
+.contact-section {
+  background: #000;
+  padding: 6px 0;
+}
+
+.contact-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('img/contact_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.contact-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.contact-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  padding: 52px 56px 56px;
+  gap: 40px;
+  align-items: end;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 4px; }
+.contact-info a, .contact-info span {
+  font-size: 0.88rem; color: #111;
+  text-decoration: none; font-weight: 400;
+}
+.contact-info a:hover { text-decoration: underline; }
+
+.social-icons {
+  display: flex; gap: 16px;
+  margin-top: 20px; align-items: center;
+}
+.social-icons a { color: #111; font-size: 1.1rem; transition: opacity 0.2s; text-decoration: none; }
+.social-icons a:hover { opacity: 0.6; }
+
+.contact-heading {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #0a0a0a;
+  margin-top: auto;
+}
+
+.contact-right {
+  display: flex; flex-direction: column;
+  gap: 28px; padding-top: 8px;
+}
+
+.name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field label { font-size: 0.82rem; color: #222; font-weight: 400; }
+
+.field input, .field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #111;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #111;
+  padding: 6px 0;
+  width: 100%;
+  resize: none;
+  transition: border-color 0.2s;
+}
+.field input:focus, .field textarea:focus { border-bottom-color: #000; }
+.field textarea { min-height: 48px; }
+
+.submit-btn {
+  align-self: flex-start;
+  background: #0a0a0a; color: #fff;
+  border: none; border-radius: 100px;
+  padding: 12px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500;
+  cursor: pointer; letter-spacing: 0.02em;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.submit-btn:hover { transform: translateY(-1px); opacity: 0.85; }
+
+@media (max-width: 700px) {
+  .contact-layout { grid-template-columns: 1fr; padding: 36px 28px; }
+  .contact-heading { font-size: 3.5rem; }
+  .name-row { grid-template-columns: 1fr; }
+}
+/* Black spacer between contact and footer */
+.spacer {
+  background: #000;
+  height: 60px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .spacer {
+    height: 40px;
+  }
+}
+/* ── FOOTER SECTION ── */
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  padding: 60px 48px 40px;
+  overflow: hidden;
+  color: white;
+}
+
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('img/hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 0;
+  filter: brightness(0.7);
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.footer-contact p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  width: 20px;
+}
+
+.footer-thanks h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: white;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 28px 30px;
+    min-height: auto;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-right {
+    align-items: flex-start;
+  }
+  
+  .footer-contact {
+    text-align: left;
+  }
+  
+  .footer-thanks h3 {
+    text-align: left;
+    font-size: 2rem;
+  }
+  
+  .footer-links {
+    gap: 20px;
+  }
+}
   </style>
 </head>
 <body>
@@ -578,6 +838,82 @@
 
   </div>
 </section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-bg"></div>
+    <div class="contact-layout" style="color: white;">
+
+      <div class="contact-left">
+        <div>
+          <div class="contact-info">
+            <span style="color: white;">09622365514</span>
+            <a href="mailto:hannahgranada458@gmail.com" style="color: white;">hannahgranada458@gmail.com</a>
+          </div>
+          <div class="social-icons">
+            <a href="#" style="color: white;"><i class="fab fa-github"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-heading" style="color: black;">LET'S GET<br>IN TOUCH</div>
+      </div>
+
+      <div class="contact-right">
+        <div class="name-row">
+          <div class="field">
+            <label style="color: white;">First Name</label>
+            <input type="text" style="color: white; border-bottom-color: white;">
+          </div>
+          <div class="field">
+            <label style="color: white;">Last Name</label>
+            <input type="text" style="color: white; border-bottom-color: white;">
+          </div>
+        </div>
+        <div class="field">
+          <label style="color: white;">Email</label>
+          <input type="email" style="color: white; border-bottom-color: white;">
+        </div>
+        <div class="field">
+          <label style="color: white;">Message</label>
+          <textarea rows="3" style="color: white; border-bottom-color: white;"></textarea>
+        </div>
+        <button class="submit-btn">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Black spacer -->
+<div class="spacer"></div>
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-bg"></div>
+  <div class="footer-overlay"></div>
+  <div class="footer-content">
+    <div class="footer-left">
+      <h2 class="footer-logo">BuildByHannah</h2>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Projects</a>
+        <a href="#">Blog</a>
+      </div>
+      <p class="copyright">© 2026 BuildByHannah. All right reserved.</p>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact">
+        <p><i class="fas fa-phone"></i> 09622365514</p>
+        <p><i class="fas fa-envelope"></i> hannahgranada458@gmail.com</p>
+      </div>
+      <div class="footer-thanks">
+        <h3>THANK YOU</h3>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <!-- Simple script for smooth interaction and consistent nav link behaviour -->
   <script>
