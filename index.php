@@ -155,13 +155,13 @@
 <section class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="contact-bg"></div>
-    <div class="contact-layout" style="color: white;">
+    <div class="contact-layout">
 
       <div class="contact-left">
         <div>
           <div class="contact-info">
-            <span style="color: white;">09622365514</span>
-            <a href="mailto:hannahgranada458@gmail.com" style="color: white;">hannahgranada458@gmail.com</a>
+            <span>09622365514</span>
+            <a href="mailto:hannahgranada458@gmail.com">hannahgranada458@gmail.com</a>
           </div>
           <div class="social-icons">
             <a href="https://github.com/MidnightStellarrr" style="color: white;"><i class="fab fa-github"></i></a>
@@ -169,29 +169,42 @@
             <a href="https://www.instagram.com/hannah_loreen_/" style="color: white;"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        <div class="contact-heading" style="color: black;">LET'S GET<br>IN TOUCH</div>
+        <div class="contact-heading">LET'S GET<br>IN TOUCH</div>
       </div>
 
       <div class="contact-right">
-        <div class="name-row">
-          <div class="field">
-            <label style="color: white;">First Name</label>
-            <input type="text" style="color: white; border-bottom-color: white;">
+        <?php if(isset($_GET['status'])): ?>
+          <div class="form-message <?php echo $_GET['status'] === 'success' ? 'success' : 'error'; ?>">
+            <?php if($_GET['status'] === 'success'): ?>
+              ✅ Message sent successfully! I&#39;ll get back to you soon.
+            <?php else: ?>
+              ❌ Failed to send message. Please try again or email me directly.
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
+
+        <form method="POST" action="send_email.php" class="contact-form">
+          <input type="hidden" name="subject" value="Portfolio website contact form">
+          <div class="name-row">
+            <div class="field">
+              <label style="color: white;">First Name</label>
+              <input type="text" name="first_name" required style="color: white; border-bottom-color: white;">
+            </div>
+            <div class="field">
+              <label style="color: white;">Last Name</label>
+              <input type="text" name="last_name" required style="color: white; border-bottom-color: white;">
+            </div>
           </div>
           <div class="field">
-            <label style="color: white;">Last Name</label>
-            <input type="text" style="color: white; border-bottom-color: white;">
+            <label style="color: white;">Email</label>
+            <input type="email" name="email" required style="color: white; border-bottom-color: white;">
           </div>
-        </div>
-        <div class="field">
-          <label style="color: white;">Email</label>
-          <input type="email" style="color: white; border-bottom-color: white;">
-        </div>
-        <div class="field">
-          <label style="color: white;">Message</label>
-          <textarea rows="3" style="color: white; border-bottom-color: white;"></textarea>
-        </div>
-        <button class="submit-btn">Submit</button>
+          <div class="field">
+            <label style="color: white;">Message</label>
+            <textarea rows="3" name="message" required style="color: white; border-bottom-color: white;"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
       </div>
 
     </div>

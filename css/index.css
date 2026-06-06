@@ -609,6 +609,20 @@ body.blur-active .video-modal-overlay {
 }
 .submit-btn:hover { transform: translateY(-1px); opacity: 0.85; }
 
+.form-message {
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.form-message.success { background: #4CAF50; }
+.form-message.error { background: #f44336; }
+
 @media (max-width: 700px) {
   .contact-layout { grid-template-columns: 1fr; padding: 36px 28px; }
   .contact-heading { font-size: 3.5rem; }
