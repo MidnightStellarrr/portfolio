@@ -164,9 +164,9 @@
             <a href="mailto:hannahgranada458@gmail.com" style="color: white;">hannahgranada458@gmail.com</a>
           </div>
           <div class="social-icons">
-            <a href="#" style="color: white;"><i class="fab fa-github"></i></a>
-            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/MidnightStellarrr" style="color: white;"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/hannahloreen.granadainsta" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hannah_loreen_/" style="color: white;"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="contact-heading" style="color: black;">LET'S GET<br>IN TOUCH</div>
