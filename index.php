@@ -30,6 +30,7 @@
     <a href="#top" class="nav-logo">BuildByHannah</a>
     <ul class="nav-links">
       <li><a href="#top">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="blog.php">Blog</a></li>
